@@ -1,0 +1,34 @@
+# proxysql admin interface credentials.
+export PROXYSQL_DATADIR='/var/lib/proxysql'
+export PROXYSQL_USERNAME='<%= node["proxysql"]["username"] %>'
+export PROXYSQL_PASSWORD='<%= node["proxysql"]["password"] %>'
+export PROXYSQL_HOSTNAME='localhost'
+export PROXYSQL_PORT='6032'
+
+# PXC admin credentials for connecting to pxc-cluster-node.
+export CLUSTER_USERNAME='<%= node["cluster"]["username"] %>'
+export CLUSTER_PASSWORD='<%= node["cluster"]["password"] %>'
+export CLUSTER_HOSTNAME='<%= node["cluster"]["hostname"] %>'
+export CLUSTER_PORT='3306'
+
+# proxysql monitoring user. proxysql admin script will create this user in pxc to monitor pxc-nodes.
+export MONITOR_USERNAME='<%= node["monitor"]["username"] %>'
+export MONITOR_PASSWORD='<%= node["monitor"]["password"] %>'
+
+# Application user to connect to pxc-node through proxysql
+export CLUSTER_APP_USERNAME='<%= node["cluster_app"]["username"] %>'
+export CLUSTER_APP_PASSWORD='<%= node["cluster_app"]["password"] %>'
+
+# ProxySQL read/write hostgroup 
+export WRITE_HOSTGROUP_ID='10'
+export READ_HOSTGROUP_ID='11'
+
+# ProxySQL read/write configuration mode.
+export MODE="<%= node["proxysql"]["mode"] %>"
+
+# Writer-is-reader configuration
+export WRITER_IS_READER="ondemand"
+
+# max_connections default (used only when INSERTing a new mysql_servers entry)
+export MAX_CONNECTIONS="1000"
+
